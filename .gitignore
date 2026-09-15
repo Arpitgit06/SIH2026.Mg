@@ -1,0 +1,30 @@
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Python / Backend
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.pytest_cache/
+backend/models/
+backend/data/*.json
+
+# Node / Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/dist/
+frontend/.eslintcache
+frontend/coverage/
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+}
+
+@layer base {
+  :root {
+    --background: 226 62% 4%;
+    --foreground: 188 20% 90%;
+    --muted: 226 30% 10%;
+    --muted-foreground: 226 20% 60%;
+    --accent: 188 94% 43%;
+    --accent-foreground: 0 0% 100%;
+    --popover: 226 62% 4%;
+    --popover-foreground: 188 20% 90%;
+    --border: 188 50% 20%;
+    --input: 188 50% 20%;
+    --card: 226 50% 6%;
+    --card-foreground: 188 20% 90%;
+    --primary: 188 94% 43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 173 80% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --destructive: 350 89% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 188 94% 43%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Premium Weather App Holograms */
+
+/* Cloud Float */
+@keyframes floatCloud {
+  0%, 100% { transform: translateY(0) scale(1.1); opacity: 0.8; }
+  50% { transform: translateY(-10px) scale(1.1); opacity: 1; }
+}
+
+/* Raindrops */
+.raindrop {
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.8));
+  width: 2px;
+  height: 20px;
+  border-radius: 50%;
+  animation: rainFall 0.8s linear infinite;
+}
+@keyframes rainFall {
+  0% { transform: translateY(-50px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(150px); opacity: 0; }
+}
+
+/* Heat Waves */
+.heat-wave-path {
+  animation: heatWaveMove 3s linear infinite;
+}
+.heat-wave-path-2 {
+  animation: heatWaveMove 4s linear infinite reverse;
+}
+@keyframes heatWaveMove {
+  0% { transform: translateX(0) scaleY(1); }
+  50% { transform: translateX(-20px) scaleY(1.2); }
+  100% { transform: translateX(0) scaleY(1); }
+}
+
+/* Cyclone Vortex */
+.vortex-spin {
+  transform-origin: center;
+  animation: vortexSpin 4s linear infinite;
+}
+@keyframes vortexSpin {
+  0% { transform: rotate(0deg) scale(0.8); opacity: 0.6; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 0.9; }
+  100% { transform: rotate(360deg) scale(0.8); opacity: 0.6; }
+}
+
+/* Wind Streaks */
+.wind-streak {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  border-radius: 50%;
+  animation: windDash 1s linear infinite;
+}
+@keyframes windDash {
+  0% { transform: translateX(-100px); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(200px); opacity: 0; }
+}
