@@ -1,0 +1,11 @@
+{
+  "name": "moil-ai-command-center",
+  "version": "1.0.0",
+  "description": "Root package.json to redirect npm commands to the frontend directory",
+  "scripts": {
+    "install": "cd frontend && npm install",
+    "dev": "start.bat",
+    "start": "start.bat"
+  },
+  "private": true
+}
